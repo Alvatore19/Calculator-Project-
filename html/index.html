@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,37 +10,27 @@
         <title>Calculadora</title>
     </head>
     <body class="bg-white text-[#ABB2BF] min-h-screen font-mono">
-        <main class="max-w-6xl mx-auto px-4">
-            <!-- Calculator content will go here -->
-            <section
-                class="flex justify-center items-center min-h-screen py-20 gap-12"
-            >
-                <!-- Calculator display -->
-                <div
-                    class="md:w-3/5 border border-1 border-[#C778DD] rounded-md bg-[#282C33]"
-                >
-                    <h1
-                        class="text-center text-2xl font-bold text-[#C778DD] py-4"
-                        >Calculadora</h1
-                    >
-                    <!-- Display area -->
+        <main class="max-w-7xl mx-auto px-4">
+            <!-- Contenido de Calculadora -->
+            <section class="flex justify-center items-center min-h-screen py-20 gap-6">
+                <!-- Area de visualizacion -->
+                <div class="w-full sm:w-3/5 md:w-2/5 border border-1 border-[#C778DD] rounded-md bg-[#282C33]">
+                    <h1 class="text-center text-2xl font-bold text-[#C778DD] py-4">Calculadora</h1>
+                    <!-- Area de resultados -->
                     <div class="px-8 py-4">
                         <div class="bg-white/10 rounded-md p-4">
-                            <div
-                                class="text-right text-xl font-bold text-[#ABB2BF] select-none"
-                            >
-                                0
-                            </div>
+                            <output class="text-right text-xl font-bold text-[#ABB2BF] select-none"> 0 </output>
                         </div>
                     </div>
-
-                    <!-- Calculator buttons -->
-
+                    <!-- Area de botones -->
                     <div class="px-4 py-2">
                         <div class="grid grid-cols-4 gap-2 p-4">
-                            <!-- Row 1 -->
+                            <!-- Area algebraica -->
+                            <!-- Fila 1 -->
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Raíz cuadrada"
+                                data-action="sqrt"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 ><svg
                                     class="mx-auto"
                                     width="24"
@@ -52,10 +42,13 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                    <path d="M3 12h2l4 8 7-16h5" /></svg
-                            ></button>
+                                    <path d="M3 12h2l4 8 7-16h5" />
+                                </svg>
+                            </button>
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Potencia"
+                                data-action="pow"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 ><svg
                                     class="mx-auto"
                                     width="24"
@@ -68,10 +61,10 @@
                                     stroke-linejoin="round"
                                 >
                                     <path d="M6 10l6 6M12 10l-6 6" />
-                                    <path d="M15 4l3 3-3 3" /></svg
-                            ></button>
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                    <path d="M15 4l3 3-3 0 3-3" />
+                                </svg>
+                            </button>
+                            <button aria-label="Pi" data-action="pi" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 ><svg
                                     class="mx-auto"
                                     width="24"
@@ -85,34 +78,47 @@
                                 >
                                     <path d="M9 18V6H17" />
                                     <path d="M15 18V6" />
-                                    <path d="M6 6h12" /></svg
-                            ></button>
+                                    <path d="M6 6h12" />
+                                </svg>
+                            </button>
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Función"
+                                data-action="fx"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >F(x)</button
                             >
 
-                            <!-- Row 2 -->
+                            <!-- Fila 2 -->
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Logaritmo"
+                                data-action="log"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >log</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Logaritmo natural"
+                                data-action="ln"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >ln</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Paréntesis abierto"
+                                data-action="open"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >(</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Paréntesis cerrado"
+                                data-action="close"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >)</button
                             >
 
-                            <!-- Row 3 -->
+                            <!-- Fila 3 -->
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Integral"
+                                data-action="integral"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                             >
                                 <svg
                                     class="mx-auto"
@@ -126,104 +132,122 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                    <path
-                                        d="M14 3c-2 0-3 1-3 3v12c0 2-1 3-3 3"
-                                    /></svg
-                            ></button>
+                                    <path d="M14 3c-2 0-3 1-3 3v12c0 2-1 3-3 3" />
+                                </svg>
+                            </button>
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Seno"
+                                data-action="sen"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >sen</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Coseno"
+                                data-action="cos"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >cos</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Tangente"
+                                data-action="tan"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >tan</button
                             >
                         </div>
                     </div>
-                    <!-- Aritmetic area -->
+
+                    <!-- Area aritmetica -->
                     <div class="px-4 py-2">
                         <div class="grid grid-cols-4 gap-2 p-4">
-                            <!-- Row 1 -->
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <!-- Fila 1 -->
+                            <button aria-label="7" data-number="7" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >7</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="8" data-number="8" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >8</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="9" data-number="9" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >9</button
                             >
                             <button
-                                class="bg-[#C778DD] text-white py-2 rounded-md"
-                                >/</button
+                                aria-label="División"
+                                data-operator="divide"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
+                                >÷</button
                             >
 
-                            <!-- Row 2 -->
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <!-- Fila 2 -->
+                            <button aria-label="4" data-number="4" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >4</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="5" data-number="5" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >5</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="6" data-number="6" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >6</button
                             >
                             <button
-                                class="bg-[#C778DD] text-white py-2 rounded-md"
-                                >*</button
+                                aria-label="Multiplicación"
+                                data-operator="multiply"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
+                                >x</button
                             >
 
-                            <!-- Row 3 -->
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <!-- Fila 3 -->
+                            <button aria-label="1" data-number="1" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >1</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="2" data-number="2" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >2</button
                             >
-                            <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                            <button aria-label="3" data-number="3" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >3</button
                             >
                             <button
-                                class="bg-[#C778DD] text-white py-2 rounded-md"
+                                aria-label="Resta"
+                                data-operator="subtract"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >-</button
                             >
 
-                            <!-- Row 4 -->
+                            <!-- Fila 4 -->
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md col-span-2"
+                                aria-label="0"
+                                data-number="0"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md col-span-2 hover:bg-[#2c313a]"
                                 >0</button
                             >
                             <button
-                                class="bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md"
+                                aria-label="Punto"
+                                data-number="."
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a] col-span-1"
                                 >.</button
                             >
                             <button
-                                class="bg-[#C778DD] text-white py-2 rounded-md"
+                                aria-label="Suma"
+                                data-operator="add"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >+</button
                             >
 
-                            <!-- Row 5 -->
+                            <!-- Fila 5 -->
                             <button
-                                class="bg-[#E06C75] text-white py-2 rounded-md col-span-4"
+                                aria-label="Igual"
+                                data-action="equal"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#E06C75] text-white font-bold py-2 rounded-md col-span-3 hover:bg-[#c75e69]"
                                 >=</button
+                            >
+                            <button
+                                aria-label="Borrar"
+                                data-action="clear"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#E06C75] text-white font-bold py-2 rounded-md col-span-1 hover:bg-[#c75e69]"
+                                >C</button
                             >
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>
