@@ -47,7 +47,7 @@
                             </button>
                             <button
                                 aria-label="Potencia"
-                                data-action="pow"
+                                data-action="^"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 ><svg
                                     class="mx-auto"
@@ -64,7 +64,10 @@
                                     <path d="M15 4l3 3-3 0 3-3" />
                                 </svg>
                             </button>
-                            <button aria-label="Pi" data-action="pi" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="Pi"
+                                data-action="π"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 ><svg
                                     class="mx-auto"
                                     width="24"
@@ -83,7 +86,7 @@
                             </button>
                             <button
                                 aria-label="Función"
-                                data-action="fx"
+                                data-action="f(x)"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >F(x)</button
                             >
@@ -103,13 +106,13 @@
                             >
                             <button
                                 aria-label="Paréntesis abierto"
-                                data-action="open"
+                                data-action="("
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >(</button
                             >
                             <button
                                 aria-label="Paréntesis cerrado"
-                                data-action="close"
+                                data-action=")"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >)</button
                             >
@@ -117,7 +120,7 @@
                             <!-- Fila 3 -->
                             <button
                                 aria-label="Integral"
-                                data-action="integral"
+                                data-action="∫"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                             >
                                 <svg
@@ -160,52 +163,79 @@
                     <div class="px-4 py-2">
                         <div class="grid grid-cols-4 gap-2 p-4">
                             <!-- Fila 1 -->
-                            <button aria-label="7" data-number="7" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="7"
+                                data-number="7"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >7</button
                             >
-                            <button aria-label="8" data-number="8" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="8"
+                                data-number="8"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >8</button
                             >
-                            <button aria-label="9" data-number="9" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="9"
+                                data-number="9"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >9</button
                             >
                             <button
                                 aria-label="División"
-                                data-operator="divide"
+                                data-operator="/"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >÷</button
                             >
 
                             <!-- Fila 2 -->
-                            <button aria-label="4" data-number="4" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="4"
+                                data-number="4"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >4</button
                             >
-                            <button aria-label="5" data-number="5" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="5"
+                                data-number="5"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >5</button
                             >
-                            <button aria-label="6" data-number="6" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="6"
+                                data-number="6"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >6</button
                             >
                             <button
                                 aria-label="Multiplicación"
-                                data-operator="multiply"
+                                data-operator="*"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >x</button
                             >
 
                             <!-- Fila 3 -->
-                            <button aria-label="1" data-number="1" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="1"
+                                data-number="1"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >1</button
                             >
-                            <button aria-label="2" data-number="2" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="2"
+                                data-number="2"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >2</button
                             >
-                            <button aria-label="3" data-number="3" class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
+                            <button
+                                aria-label="3"
+                                data-number="3"
+                                class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#3E4451] text-[#ABB2BF] py-2 rounded-md hover:bg-[#2c313a]"
                                 >3</button
                             >
                             <button
                                 aria-label="Resta"
-                                data-operator="subtract"
+                                data-operator="-"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >-</button
                             >
@@ -225,7 +255,7 @@
                             >
                             <button
                                 aria-label="Suma"
-                                data-operator="add"
+                                data-operator="+"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#C778DD] text-white py-2 rounded-md hover:bg-[#b263c3]"
                                 >+</button
                             >
@@ -233,13 +263,13 @@
                             <!-- Fila 5 -->
                             <button
                                 aria-label="Igual"
-                                data-action="equal"
+                                data-action="="
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#E06C75] text-white font-bold py-2 rounded-md col-span-3 hover:bg-[#c75e69]"
                                 >=</button
                             >
                             <button
                                 aria-label="Borrar"
-                                data-action="clear"
+                                data-action="C"
                                 class="focus:outline-none focus:ring-2 focus:ring-[#C778DD] bg-[#E06C75] text-white font-bold py-2 rounded-md col-span-1 hover:bg-[#c75e69]"
                                 >C</button
                             >
@@ -248,6 +278,6 @@
                 </div>
             </section>
         </main>
-        <script src="script.js"></script>
+        <script src="../js/script.js"></script>
     </body>
 </html>
