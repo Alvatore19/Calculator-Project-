@@ -1,9 +1,6 @@
 // Variables
+let expresion = "";
 const pantalla = document.querySelector("output");
-
-let operandoAnterior = "";
-let operandoActual = "";
-let operador = undefined;
 let buttons = document.querySelectorAll("button");
 
 // Procesos de los botones
@@ -15,120 +12,114 @@ buttons.forEach((button) => {
         }
 
         // 2. Si es una operación aritmética (+, -, *, /)
-        if (button.dataset.operator) {
+        else if (button.dataset.operator) {
             agregarOperador(button.dataset.operator);
         }
 
         // 3. Si es una operacion algebraica (raiz, potencia, integral, etc.)
-        if (button.dataset.action) {
-            agregarOperacionAlgebraica(button.dataset.action);
-        }
+        else if (button.dataset.action) {
+            const accion = button.dataset.action;
 
-        // 3. Si es una acción especial (igual, limpiar, trigonometría)
-        if (button.dataset.action) {
-            switch (button.dataset.action) {
-                case "equal":
+            switch (accion) {
+                // --- Acciones de Ejecución ---
+                case "=":
                     calcular();
                     break;
-                case "clear":
+                case "Del":
                     limpiar();
                     break;
+                case "C":
+                    limpiarTodo();
+                    break;
+
+                // --- Acciones que se agregan a la pantalla ---
                 case "sqrt":
-                    raiz();
-                    break;
-                case "pow":
-                    potencia();
-                    break;
-                case "integral":
-                    integral();
-                    break;
-                case "sen":
-                    seno();
-                    break;
-                case "cos":
-                    coseno();
-                    break;
-                case "tan":
-                    tangente();
-                    break;
-                case "close":
-                    parentesisCerrado();
-                    break;
-                case "+":
-                    suma();
-                    break;
-                case "subtract":
-                    resta();
-                    break;
-                case "multiply":
-                    multiplicacion();
-                    break;
-                case "divide":
-                    division();
-                    break;
-                case "ln":
-                    logaritmoNatural();
-                    break;
+                case "^":
+                case "π":
                 case "log":
-                    logaritmo();
-                    break;
-                case "fx":
-                    funcion();
-                    break;
-                case "pi":
-                    pi();
-                    break;
-                case "open":
-                    parentesisAbierto();
+                case "ln":
+                case "(":
+                case ")":
+                case "∫":
+                case "sen":
+                case "cos":
+                case "tan":
+                    agregarOperacionAlgebraica(accion);
                     break;
             }
         }
     });
 });
 
+// Procesos 
+const calcular = (resultado) => {
+    
+};
+
 const agregarNumero = (numero) => {
-    if (numero === "." && operandoActual.includes(".")) {
+    let operadores = expresion.split(/[\+\-\*\/\^\(\)]/);
+    let ultimoN = operadores[operadores.length - 1];
+
+    // Validacion para los puntos
+    if (numero === "." && ultimoN.includes(".")) {
+        alert("Expresion invalida");
         return;
     }
 
-    if (operandoActual === "0" && numero !== ".") {
-        operandoActual = numero;
+    // Remplaza el "0" o el "." de ser necesario
+    if (expresion === "0" && numero !== ".") {
+        expresion = numero;
     } else {
-        operandoActual = operandoActual + numero;
+        expresion += numero;
     }
 
     actualizarPantalla();
 };
 
 const agregarOperador = (operadorPresionado) => {
-    if (operandoActual === "") {
-        operandoActual = "0";
+    if (expresion === "") {
+        alert("Expresion invalida");
+        return;
     }
 
-    operandoAnterior = operandoAnterior + operandoActual;
-    operandoActual = operadorPresionado;
+    let ultimoCaracter = expresion.slice(-1);
 
+    if (["+", "-", "*", "/", "^"].includes(ultimoCaracter)) {
+        alert("Operadores Invalidos");
+        return;
+    }
+
+    expresion += operadorPresionado;
     actualizarPantalla();
 };
 
 const agregarOperacionAlgebraica = (operacionAlgebraica) => {
-    if (operandoActual === "") {
-        operandoActual = "0";
+    if (expresion === "0") {
+        expresion = operacionAlgebraica;
+    } else {
+        expresion += operacionAlgebraica;
     }
-
-    operandoAnterior = operandoAnterior + operandoActual;
-    operandoActual = operacionAlgebraica;
 
     actualizarPantalla();
 };
 
-const calcular = (resultado) => {};
-
 const limpiar = () => {
-    operandoActual = "0";
+    let ultimoCaracter = expresion.slice(0, -1);
+
+    expresion = ultimoCaracter;
+
+    if (expresion === "") {
+        expresion = "0";
+    }
+
+    actualizarPantalla();
+};
+
+const limpiarTodo = () => {
+    expresion = "0";
     actualizarPantalla();
 };
 
 const actualizarPantalla = () => {
-    pantalla.textContent = operandoActual;
+    pantalla.textContent = expresion;
 };
