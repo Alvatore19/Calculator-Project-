@@ -3,6 +3,18 @@ let expresion = "";
 const pantalla = document.querySelector("output");
 let buttons = document.querySelectorAll("button");
 
+const jerarquiaOperacional = {
+    "+": 1,
+    "-": 1,
+    "*": 2,
+    "/": 2,
+    "^": 3,
+    sen: 4,
+    cos: 4,
+    tan: 4,
+    sqrt: 4,
+};
+
 // Procesos de los botones
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -51,10 +63,7 @@ buttons.forEach((button) => {
     });
 });
 
-// Procesos 
-const calcular = (resultado) => {
-    
-};
+// Procesos
 
 const agregarNumero = (numero) => {
     let operadores = expresion.split(/[\+\-\*\/\^\(\)]/);
@@ -101,6 +110,12 @@ const agregarOperacionAlgebraica = (operacionAlgebraica) => {
     }
 
     actualizarPantalla();
+};
+
+const tokenizar = (expresionStr) => {
+    const regex = /\d+\.\d+|\d+|[a-zA-Z]+|[\+\-\*\/\^\(\)]/g;
+
+    return expresionStr.match(regex);
 };
 
 const limpiar = () => {

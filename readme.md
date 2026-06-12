@@ -1,4 +1,4 @@
-# Calculadora Científica Web 🧮
+# Calculadora Web 🧮
 
 Una calculadora web moderna, accesible y de alto rendimiento construida con HTML, Tailwind CSS y Vanilla JavaScript. A diferencia de calculadoras básicas que evalúan operaciones de una en una, este proyecto implementa un motor matemático personalizado capaz de procesar, ordenar y evaluar ecuaciones complejas respetando la jerarquía de operaciones.
 
